@@ -6,13 +6,13 @@ jobs:
   build:
     strategy:
       matrix:
-        runs-on: [ ubuntu-latest, macos-latest, macos-13 ]
+        runs-on: [ ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.runs-on }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Use dune
-        uses: ocaml-dune/setup-dune@v0
+        uses: ocaml-dune/setup-dune@v1
         with:
           automagic: true
